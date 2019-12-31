@@ -115,9 +115,8 @@ func restore() error {
 			tag:          tag,
 			username:     username}
 
-		err = handleFuncError(err, func() error {
-			return cont.removeVolume(ctx)
-		})
+        cont.removeVolume(ctx)
+
 		err = handleFuncError(err, func() error {
 			return cont.createVolume(ctx)
 		})
